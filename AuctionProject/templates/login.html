@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <style>body{
+        background-color: rgb(56, 131, 245);
+    }
+    .head{
+        
+        padding-top: 3cm;
+        padding-bottom: .5cm;
+        text-align: center;
+    }
+    .main{
+        margin-top: 0cm;
+        padding-left: 39.8%;
+    }
+    .main form{
+        padding-left: 1cm;
+        border: 5px solid white;
+        border-radius: 18px;
+        height: 10cm;
+        width: 7cm;
+        background-color: white;
+    
+    }
+    .sub{
+        padding-top: .5cm;
+        padding-bottom: .3cm;
+    }
+    .btn{
+        text-align: center;
+        background-color: rgb(56, 131, 245);
+        border-radius: 15px;
+        width: 6.2cm;
+        height: .6cm;
+    }
+    .main input{
+        border: 1px solid black;
+        border-radius: 15px;
+        height: .6cm;
+        width: 6cm;
+    }
+    .main a{
+        text-decoration: none;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="head"><h1>Welcome To Kristellar</h1></div>
+    <div class="main">
+        <form action="/login" method="post">
+            {% csrf_token %}
+            <div class="sub">
+                <h1><u>Login</u></h1>
+            </div>
+            User Name  <br>
+            <input type="text" name="luname" id="luname"><br><br>
+            Password  <br>
+            <input type="password" name="lpsw" id="lpsw"><br><br>
+            <a href="">Forget password?</a><br><br>
+            <button class="btn" type="submit">Sign in</button><br><br><a href="{% url 'signup' %}">Don't have an account?</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'home' %}"> Back</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <style>body{
+        background-color: rgb(56, 131, 245);
+    }
+    .head{
+        padding-top: .5cm;
+        padding-bottom: .5cm;
+        text-align: center;
+    }
+    .main{
+        margin-top: 0cm;
+        padding-left: 37%;
+    }
+    .main form{
+        padding-left: 1.5cm;
+        border: 5px solid white;
+        border-radius: 18px;
+        height: 17cm;
+        width: 9cm;
+        background-color: white;
+    
+    }
+    .sub{
+        padding-top: .5cm;
+        padding-bottom: .3cm;
+    }
+    .btn{
+        text-align: center;
+        background-color: rgb(56, 131, 245);
+        border-radius: 15px;
+        width: 6.2cm;
+        height: .6cm;
+    }
+    .main input{
+        border: 1px solid black;
+        border-radius: 15px;
+        height: .6cm;
+        width: 6cm;
+    }
+    .main a{
+        text-decoration: none;
+        text-align: center;
+        font-size: large;
+    }</style>
+</head>
+<body>
+    <div class="head"><h1>Welcome To Kristellar</h1></div>
+    <div class="main">
+        <form action="/signup" method="post">
+            {% csrf_token%}
+            <div class="sub">
+                <h1><u>Sign Up</u></h1>
+            </div>
+            User Name  <br>
+            <input type="text" name="uname" id="uname"><br><br>
+
+            First Name  <br>
+            <input type="text" name="fname" id="fname"><br><br>
+            
+            Last Name  <br>
+            <input type="text" name="lname" id="lname"><br><br>
+            Mobile Number  <br>
+            <input type="number" name="mob" id="mob"><br><br>
+            Email  <br>
+            <input type="email" name="email" id="email" ><br><br>
+            Create Your Password <br>
+            <input type="password" name="psw" id="psw"><br><br>
+            Confirm Your Password  <br>
+            <input type="password" name="cpsw" id="cpsw"><br><br>
+            <button class="btn" type='submit'>Sign Up</button><br><br>
+            <a href="{% url 'userlogin' %}">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'home' %}"> Back</a>
+        </form>
+    </div>
+</body>
+</html>

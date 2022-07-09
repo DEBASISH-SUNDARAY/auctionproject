@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>header{
+        text-align: center;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        padding: 10px;
+        margin:auto;
+        background-color: white;
+        width: 80%;
+    }
+    nav{
+        display: flex;	 
+    }
+    li{
+        float: center;
+        padding-right:6px;
+    }
+    .list{
+        display:block;
+        color: black;
+        text-align: center;
+        padding: 34px 15px;
+       
+    }
+     .search{
+        padding-top: 34px;
+        padding-left: 400px;	
+    }
+    .image{
+        margin: 1cm;
+        height: 5cm;
+        width: 5cm;
+    }
+    .container{
+        display: flex;
+    }
+    img{
+        height: 5cm;
+        width: 5cm;
+    }
+
+</style>
+    </head>
+    <body>
+    <header><h1>Welcome To Kristellar</h1></header>
+    <nav>
+    <ul>
+    <li><a href="{% url 'home1' %}" class="list">Home</a></li>
+    <li><a href="#" class="list">About</a></li>
+    <li><a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="list">Admin</a></li>
+    <li><a href="{% url 'myproduct' %}" class="list">MyProduct</a></li>
+    <li><a href="{% url 'addproduct' %}" class="list">AddProduct</a></li>
+    <li><a href="{% url 'home' %}" class="list">LogOut</a></li>
+    <div class="search">
+    <input type="text" placeholder="Search Here">
+    <button type="submit">Go</button>
+    </div>
+    </ul>
+    </nav>
+    <div>
+        <h1>
+            All Products
+        </h1>
+    </div>
+    <div class="container">
+        {% for p in prd1 %}
+        <div class="subcntnr">
+            {{p.ProductName}}
+            <div class="image">
+                <img src="{{p.ProductImage.url}}" alt="">
+            </div>
+            <a href="{% url 'more' %}">View more Details</a>
+        </div>
+        {% endfor %}
+    </div>
+    </body>
+    </html>
